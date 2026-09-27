@@ -1,0 +1,221 @@
+1. Print your own name using function
+void printName() {
+  print("Shahriar Abir Pranto");
+}
+
+void main() {
+  printName();
+}
+
+Output:
+
+Shahriar Abir Pranto
+
+2. Print even numbers between intervals using function
+void printEvenNumbers(int start, int end) {
+  for (int i = start; i <= end; i++) {
+    if (i % 2 == 0) {
+      print(i);
+    }
+  }
+}
+
+void main() {
+  printEvenNumbers(1, 20);
+}
+
+Output:
+
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+3. Create a greet function
+void greet(String name) {
+  print("Hello, $name");
+}
+
+void main() {
+  greet("John");
+}
+
+Output:
+
+Hello, John
+4. Generate random password
+import 'dart:math';
+
+String generatePassword(int length) {
+  const characters =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  Random random = Random();
+
+  String password = '';
+
+  for (int i = 0; i < length; i++) {
+    password += characters[random.nextInt(characters.length)];
+  }
+
+  return password;
+}
+
+void main() {
+  String password = generatePassword(8);
+
+  print("Random Password: $password");
+}
+
+Sample Output:
+
+Random Password: A7kP2mQ9
+
+
+5. Find area of a circle using function
+double calculateArea(double r) {
+  return 3.1416 * r * r;
+}
+
+void main() {
+  double radius = 5;
+
+  double area = calculateArea(radius);
+
+  print("Area of Circle = $area");
+}
+
+Output:
+
+Area of Circle = 78.54
+
+6. Reverse a String using function
+String reverseString(String text) {
+  return text.split('').reversed.join('');
+}
+
+void main() {
+  String result = reverseString("Dart");
+
+  print("Reversed String = $result");
+}
+
+Output:
+
+Reversed String = traD
+
+7. Calculate power of a number
+
+Example: 5³ = 125
+
+import 'dart:math';
+
+num calculatePower(num base, num exponent) {
+  return pow(base, exponent);
+}
+
+void main() {
+  num result = calculatePower(5, 3);
+
+  print("5^3 = $result");
+}
+
+Output:
+
+5^3 = 125
+
+8. Function add that returns sum
+int add(int a, int b) {
+  return a + b;
+}
+
+void main() {
+  int result = add(10, 20);
+
+  print("Sum = $result");
+}
+
+Output:
+
+Sum = 30
+9. Function maxNumber to find largest of three numbers
+int maxNumber(int a, int b, int c) {
+  int max = a;
+
+  if (b > max) {
+    max = b;
+  }
+
+  if (c > max) {
+    max = c;
+  }
+
+  return max;
+}
+
+void main() {
+  int result = maxNumber(10, 25, 15);
+
+  print("Largest Number = $result");
+}
+
+Output:
+
+Largest Number = 25
+10. Function isEven
+bool isEven(int number) {
+  return number % 2 == 0;
+}
+
+void main() {
+  print(isEven(10));
+  print(isEven(7));
+}
+
+Output:
+
+true
+false
+
+11. Function createUser with default isActive = true
+void createUser(String name, int age, {bool isActive = true}) {
+  print("Name: $name");
+  print("Age: $age");
+  print("Active: $isActive");
+}
+
+void main() {
+  createUser("John", 25);
+}
+
+Output:
+
+Name: John
+Age: 25
+Active: true
+
+12. Function calculateArea for rectangle
+double calculateArea([double length = 1, double width = 1]) {
+  return length * width;
+}
+
+void main() {
+  double area = calculateArea(10, 5);
+
+  print("Area of Rectangle = $area");
+}
+
+Output:
+
+Area of Rectangle = 50.0
+
+
+
+
+
+

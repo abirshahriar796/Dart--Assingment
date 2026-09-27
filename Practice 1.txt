@@ -1,0 +1,247 @@
+1. Print your name
+void main() {
+  print("Shahriar Abir Pranto");
+}
+
+Output:
+
+Shahriar Abir pranto
+
+2. Print Hello with single and double quotes
+void main() {
+  print('Hello I am "John Doe"');
+  print("Hello I'am \"John Doe\"");
+}
+
+Output:
+
+Hello I am "John Doe"
+Hello I'am "John Doe"
+
+3. Declare constant int with value 7
+void main() {
+  const int number = 7;
+  print(number);
+}
+
+Output:
+
+7
+
+4. Find Simple Interest
+
+Formula:
+SI = (p * t * r) / 100
+
+import 'dart:io';
+
+void main() {
+  print("Enter principal amount:");
+  double p = double.parse(stdin.readLineSync()!);
+
+  print("Enter time:");
+  double t = double.parse(stdin.readLineSync()!);
+
+  print("Enter rate:");
+  double r = double.parse(stdin.readLineSync()!);
+
+  double si = (p * t * r) / 100;
+
+  print("Simple Interest = $si");
+}
+
+Output:
+
+Enter principal amount:
+10000
+Enter time:
+2
+Enter rate:
+5
+Simple Interest = 1000.0
+
+5. Print square of a number using user input
+import 'dart:io';
+
+void main() {
+  print("Enter a number:");
+  int number = int.parse(stdin.readLineSync()!);
+
+  int square = number * number;
+
+  print("Square = $square");
+}
+
+Output:
+
+Enter a number:
+5
+Square = 25
+
+6. Print full name from first name and last name
+import 'dart:io';
+
+void main() {
+  print("Enter first name:");
+  String firstName = stdin.readLineSync()!;
+
+  print("Enter last name:");
+  String lastName = stdin.readLineSync()!;
+
+  String fullName = "$firstName $lastName";
+
+  print("Full Name = $fullName");
+}
+
+Output:
+
+Enter first name:
+Shahriar
+Enter last name:
+Pranto
+Full Name = Shahriar Pranto
+
+7. Find quotient and remainder
+import 'dart:io';
+
+void main() {
+  print("Enter first integer:");
+  int a = int.parse(stdin.readLineSync()!);
+
+  print("Enter second integer:");
+  int b = int.parse(stdin.readLineSync()!);
+
+  int quotient = a ~/ b;
+  int remainder = a % b;
+
+  print("Quotient = $quotient");
+  print("Remainder = $remainder");
+}
+
+Output:
+
+Enter first integer:
+17
+Enter second integer:
+5
+Quotient = 3
+Remainder = 2
+
+8. Swap two numbers
+import 'dart:io';
+
+void main() {
+  print("Enter first number:");
+  int a = int.parse(stdin.readLineSync()!);
+
+  print("Enter second number:");
+  int b = int.parse(stdin.readLineSync()!);
+
+  print("Before swapping: a = $a, b = $b");
+
+  int temp = a;
+  a = b;
+  b = temp;
+
+  print("After swapping: a = $a, b = $b");
+}
+
+Output:
+
+Enter first number:
+10
+Enter second number:
+20
+Before swapping: a = 10, b = 20
+After swapping: a = 20, b = 10
+9. Remove all whitespaces from String
+import 'dart:io';
+
+void main() {
+  print("Enter a string:");
+  String text = stdin.readLineSync()!;
+
+  String result = text.replaceAll(RegExp(r'\s+'), '');
+
+  print("String without whitespace = $result");
+}
+
+Output:
+
+Enter a string:
+Hello World Dart
+String without whitespace = HelloWorldDart
+10. Convert String to int
+import 'dart:io';
+
+void main() {
+  print("Enter a number as String:");
+  String number = stdin.readLineSync()!;
+
+  int value = int.parse(number);
+
+  print("Integer value = $value");
+}
+
+Output:
+
+Enter a number as String:
+25
+Integer value = 25
+
+11. Split restaurant bill among friends
+
+Formula:
+Split Amount = Total Bill / Number of People
+
+import 'dart:io';
+
+void main() {
+  print("Enter total bill amount:");
+  double bill = double.parse(stdin.readLineSync()!);
+
+  print("Enter number of people:");
+  int people = int.parse(stdin.readLineSync()!);
+
+  double amount = bill / people;
+
+  print("Each person has to pay = $amount");
+}
+
+Output:
+
+Enter total bill amount:
+2000
+Enter number of people:
+4
+Each person has to pay = 500.0
+
+12. Calculate time taken to reach office
+
+Given:
+
+Distance = 25 km
+Speed = 40 km/hour
+
+Formula:
+Time = Distance / Speed
+
+Then convert hours to minutes:
+
+Minutes = Time × 60
+
+void main() {
+  double distance = 25;
+  double speed = 40;
+
+  double timeInHours = distance / speed;
+  double timeInMinutes = timeInHours * 60;
+
+  print("Time taken = $timeInMinutes minutes");
+}
+
+Output:
+
+Time taken = 37.5 minutes
+
+

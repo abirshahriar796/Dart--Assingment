@@ -1,0 +1,336 @@
+1. Create a list of names and print all names
+void main() {
+  List<String> names = [
+    "John",
+    "David",
+    "Alex",
+    "Rahim",
+    "Karim"
+  ];
+
+  for (String name in names) {
+    print(name);
+  }
+}
+
+Output:
+
+John
+David
+Alex
+Rahim
+Karim
+
+2. Create a set of fruits and print all fruits using loop
+void main() {
+  Set<String> fruits = {
+    "Apple",
+    "Banana",
+    "Mango",
+    "Orange",
+    "Grapes"
+  };
+
+  for (String fruit in fruits) {
+    print(fruit);
+  }
+}
+
+Output:
+
+Apple
+Banana
+Mango
+Orange
+Grapes
+
+3. Read list of expense amounts using user input and print total
+import 'dart:io';
+
+void main() {
+  List<double> expenses = [];
+
+  print("Enter 5 expense amounts:");
+
+  for (int i = 1; i <= 5; i++) {
+    double amount = double.parse(stdin.readLineSync()!);
+    expenses.add(amount);
+  }
+
+  double total = 0;
+
+  for (double expense in expenses) {
+    total += expense;
+  }
+
+  print("Total Expense = $total");
+}
+
+Output:
+
+Enter 5 expense amounts:
+100
+250
+150
+300
+200
+Total Expense = 1000.0
+
+4. Empty String list days and add 7 days
+void main() {
+  List<String> days = [];
+
+  days.add("Saturday");
+  days.add("Sunday");
+  days.add("Monday");
+  days.add("Tuesday");
+  days.add("Wednesday");
+  days.add("Thursday");
+  days.add("Friday");
+
+  for (String day in days) {
+    print(day);
+  }
+}
+
+Output:
+
+Saturday
+Sunday
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+
+5. Add 7 friend names and find names starting with A
+void main() {
+  List<String> friends = [
+    "Abir",
+    "Rahim",
+    "Amin",
+    "Karim",
+    "Arif",
+    "Hasan",
+    "Sakib"
+  ];
+
+  List<String> result =
+      friends.where((name) => name.startsWith("A")).toList();
+
+  print("Names starting with A:");
+
+  for (String name in result) {
+    print(name);
+  }
+}
+
+Output:
+
+Names starting with A:
+Abir
+Amin
+Arif
+
+6. Create a Map with name, address, age, country
+void main() {
+  Map<String, dynamic> person = {
+    "name": "John",
+    "address": "Dhaka",
+    "age": 25,
+    "country": "Bangladesh"
+  };
+
+  // Update country
+  person["country"] = "Canada";
+
+  print("Keys:");
+  for (String key in person.keys) {
+    print(key);
+  }
+
+  print("\nValues:");
+  for (var value in person.values) {
+    print(value);
+  }
+}
+
+Output:
+
+Keys:
+name
+address
+age
+country
+
+Values:
+John
+Dhaka
+25
+Canada
+
+7. Map with name and phone keys; find keys with length 4
+void main() {
+  Map<String, String> contacts = {
+    "John": "01711111111",
+    "Alex": "01822222222",
+    "David": "01933333333",
+    "Abir": "01644444444",
+    "Rahim": "01555555555"
+  };
+
+  var result = contacts.keys.where((key) => key.length == 4);
+
+  print("Keys with length 4:");
+
+  for (String key in result) {
+    print(key);
+  }
+}
+
+Output:
+
+Keys with length 4:
+John
+Alex
+Abir
+8. Simple To-Do Application
+
+import 'dart:io';
+
+void main() {
+  List<String> tasks = [];
+
+  while (true) {
+    print("\n--- To-Do Application ---");
+    print("1. Add Task");
+    print("2. Remove Task");
+    print("3. View Tasks");
+    print("4. Exit");
+
+    print("Enter your choice:");
+    int choice = int.parse(stdin.readLineSync()!);
+
+    if (choice == 1) {
+      print("Enter task:");
+      String task = stdin.readLineSync()!;
+
+      tasks.add(task);
+
+      print("Task added successfully!");
+    } 
+    
+    else if (choice == 2) {
+      if (tasks.isEmpty) {
+        print("No tasks available.");
+      } else {
+        print("Enter task number to remove:");
+
+        for (int i = 0; i < tasks.length; i++) {
+          print("${i + 1}. ${tasks[i]}");
+        }
+
+        int number = int.parse(stdin.readLineSync()!);
+
+        if (number >= 1 && number <= tasks.length) {
+          tasks.removeAt(number - 1);
+          print("Task removed successfully!");
+        } else {
+          print("Invalid task number.");
+        }
+      }
+    } 
+    
+    else if (choice == 3) {
+      if (tasks.isEmpty) {
+        print("No tasks available.");
+      } else {
+        print("Your Tasks:");
+
+        for (int i = 0; i < tasks.length; i++) {
+          print("${i + 1}. ${tasks[i]}");
+        }
+      }
+    } 
+    
+    else if (choice == 4) {
+      print("Thank you!");
+      break;
+    } 
+    
+    else {
+      print("Invalid choice!");
+    }
+  }
+}
+
+Output:
+
+--- To-Do Application ---
+1. Add Task
+2. Remove Task
+3. View Tasks
+4. Exit
+Enter your choice:
+1
+
+Enter task:
+Study Dart
+Task added successfully!
+
+--- To-Do Application ---
+1. Add Task
+2. Remove Task
+3. View Tasks
+4. Exit
+Enter your choice:
+1
+
+Enter task:
+Complete Assignment
+Task added successfully!
+
+--- To-Do Application ---
+1. Add Task
+2. Remove Task
+3. View Tasks
+4. Exit
+Enter your choice:
+3
+
+Your Tasks:
+1. Study Dart
+2. Complete Assignment
+
+--- To-Do Application ---
+1. Add Task
+2. Remove Task
+3. View Tasks
+4. Exit
+Enter your choice:
+2
+
+Enter task number to remove:
+1
+Task removed successfully!
+
+--- To-Do Application ---
+1. Add Task
+2. Remove Task
+3. View Tasks
+4. Exit
+Enter your choice:
+3
+
+Your Tasks:
+1. Complete Assignment
+
+--- To-Do Application ---
+1. Add Task
+2. Remove Task
+3. View Tasks
+4. Exit
+Enter your choice:
+4
+
+Thank you!

@@ -1,0 +1,224 @@
+1. Check Odd or Even
+import 'dart:io';
+
+void main() {
+  print("Enter a number:");
+  int number = int.parse(stdin.readLineSync()!);
+
+  if (number % 2 == 0) {
+    print("$number is Even");
+  } else {
+    print("$number is Odd");
+  }
+}
+
+Output:
+
+Enter a number:
+10
+10 is Even
+
+2. Check Vowel or Consonant
+import 'dart:io';
+
+void main() {
+  print("Enter a character:");
+  String ch = stdin.readLineSync()!.toLowerCase();
+
+  if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+    print("$ch is a Vowel");
+  } else {
+    print("$ch is a Consonant");
+  }
+}
+
+Output:
+
+Enter a character:
+a
+a is a Vowel
+3. Check Positive, Negative, or Zero
+import 'dart:io';
+
+void main() {
+  print("Enter a number:");
+  int number = int.parse(stdin.readLineSync()!);
+
+  if (number > 0) {
+    print("$number is Positive");
+  } else if (number < 0) {
+    print("$number is Negative");
+  } else {
+    print("The number is Zero");
+  }
+}
+
+Output:
+
+Enter a number:
+-5
+-5 is Negative
+
+4. Print Your Name 100 Times
+void main() {
+  for (int i = 1; i <= 100; i++) {
+    print("$i. Shahriar Abir Pranto");
+  }
+}
+
+Output:
+
+1. Shahriar Abir Pranto
+2. Shahriar Abir Pranto
+3. Shahriar Abir Pranto
+...
+98. Shahriar Abir Pranto
+99. Shahriar Abir Pranto
+100. Shahriar Abir Pranto
+
+5. Calculate Sum of Natural Numbers
+import 'dart:io';
+
+void main() {
+  print("Enter the limit:");
+  int n = int.parse(stdin.readLineSync()!);
+
+  int sum = 0;
+
+  for (int i = 1; i <= n; i++) {
+    sum = sum + i;
+  }
+
+  print("Sum = $sum");
+}
+
+Output:
+
+Enter the limit:
+10
+Sum = 55
+6. Multiplication Table of 5
+void main() {
+  for (int i = 1; i <= 10; i++) {
+    print("5 x $i = ${5 * i}");
+  }
+}
+
+Output:
+
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50
+
+7. Multiplication Tables of 1–9
+void main() {
+  for (int n = 1; n <= 9; n++) {
+    print("Table of $n:");
+
+    for (int i = 1; i <= 10; i++) {
+      print("$n x $i = ${n * i}");
+    }
+
+    print("");
+  }
+}
+
+Output:
+
+Table of 1:
+1 x 1 = 1
+1 x 2 = 2
+...
+1 x 10 = 10
+
+Table of 2:
+2 x 1 = 2
+2 x 2 = 4
+...
+2 x 10 = 20
+
+...
+
+Table of 9:
+9 x 1 = 9
+9 x 2 = 18
+...
+9 x 10 = 90
+
+8. Simple Calculator
+import 'dart:io';
+
+void main() {
+  print("Enter first number:");
+  double a = double.parse(stdin.readLineSync()!);
+
+  print("Enter operator (+, -, *, /):");
+  String operator = stdin.readLineSync()!;
+
+  print("Enter second number:");
+  double b = double.parse(stdin.readLineSync()!);
+
+  double result;
+
+  if (operator == '+') {
+    result = a + b;
+  } else if (operator == '-') {
+    result = a - b;
+  } else if (operator == '*') {
+    result = a * b;
+  } else if (operator == '/') {
+    result = a / b;
+  } else {
+    print("Invalid operator");
+    return;
+  }
+
+  print("Result = $result");
+}
+
+Output:
+
+Enter first number:
+20
+Enter operator (+, -, *, /):
++
+Enter second number:
+10
+Result = 30.0
+
+9. print 1 to 100 but not 41
+
+void main() {
+  for (int i = 1; i <= 100; i++) {
+    if (i == 41) {
+      continue;
+    }
+
+    print(i);
+  }
+}
+
+Output:
+
+1
+2
+3
+4
+5
+...
+39
+40
+42
+43
+44
+...
+99
+100
+

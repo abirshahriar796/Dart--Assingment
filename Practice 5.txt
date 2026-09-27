@@ -1,0 +1,131 @@
+1. Add your name to hello.txt
+import 'dart:io';
+
+void main() {
+  File file = File('hello.txt');
+
+  file.writeAsStringSync('Shahriar Abir Pranto');
+
+  print('Name added to hello.txt');
+}
+
+Output:
+
+Name added to hello.txt
+
+2. Append friend's name to existing file
+
+import 'dart:io';
+
+void main() {
+  File file = File('hello.txt');
+
+  file.writeAsStringSync(
+    '\nRahim\nKarim\nSakib',
+    mode: FileMode.append,
+  );
+
+  print('Friend names added successfully.');
+}
+
+output:
+Friend names added successfully.
+
+3. Get current working directory
+import 'dart:io';
+
+void main() {
+  Directory currentDirectory = Directory.current;
+
+  print('Current Working Directory:');
+  print(currentDirectory.path);
+}
+
+ Output:
+
+Current Working Directory:
+C:\Users\Student\dart_project
+
+4. Copy hello.txt to hello_copy.txt
+import 'dart:io';
+
+void main() {
+  File file = File('hello.txt');
+
+  file.copySync('hello_copy.txt');
+
+  print('File copied successfully.');
+}
+
+Output:
+
+File copied successfully.
+
+5. Create 100 files using loop
+import 'dart:io';
+
+void main() {
+  for (int i = 1; i <= 100; i++) {
+    File file = File('file_$i.txt');
+
+    file.writeAsStringSync('This is file $i');
+  }
+
+  print('100 files created successfully.');
+}
+
+Output:
+
+100 files created successfully.
+
+6. Delete hello_copy.txt
+
+import 'dart:io';
+
+void main() {
+  File file = File('hello_copy.txt');
+
+  if (file.existsSync()) {
+    file.deleteSync();
+    print('hello_copy.txt deleted successfully.');
+  } else {
+    print('File does not exist.');
+  }
+}
+
+output:
+hello_copy.txt deleted successfully.
+7. Store student information in CSV and read it
+
+import 'dart:io';
+
+void main() {
+  File file = File('students.csv');
+
+  // Write data to CSV file
+  file.writeAsStringSync(
+    'Name,Age,Address\n'
+    'John,20,Dhaka\n'
+    'Rahim,21,Sylhet\n'
+    'Karim,22,Chittagong\n'
+  );
+
+  print('Student data written to students.csv\n');
+
+  // Read CSV file
+  String data = file.readAsStringSync();
+
+  print('Student Information:');
+  print(data);
+}
+
+output:
+Student data written to students.csv
+
+Student Information:
+Name,Age,Address
+John,20,Dhaka
+Rahim,21,Sylhet
+Karim,22,Chittagong
+
+
